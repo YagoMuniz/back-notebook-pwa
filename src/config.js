@@ -23,7 +23,7 @@ const config = {
   all: {
     env: process.env.NODE_ENV || 'development',
     root: path.join(__dirname, '..'),
-    port: process.env.PORT || 9000,
+    port: process.env.PORT || 5000,
     ip: process.env.IP || '0.0.0.0',
     apiRoot: process.env.API_ROOT || '',
     masterKey: requireProcessEnv('MASTER_KEY'),
@@ -48,7 +48,7 @@ const config = {
   },
   production: {
     ip: process.env.IP || undefined,
-    port: process.env.PORT || 8080,
+    port: process.env.PORT || 5000,
     mongo: {
       //uri: process.env.MONGODB_URI || 'mongodb://localhost/back-notebook-pwa'
       uri: process.env.MONGODB_URI || 'mongodb+srv://admin:123@cluster0-mapet.mongodb.net/test?retryWrites=true'
