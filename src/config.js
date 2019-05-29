@@ -43,7 +43,7 @@ const config = {
       uri: 'mongodb+srv://admin:123@cluster0-mapet.mongodb.net/test?retryWrites=true',
       options: {
         debug: true
-      }
+      } 
     }
   },
   production: {
