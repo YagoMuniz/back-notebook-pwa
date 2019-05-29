@@ -39,7 +39,8 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb://localhost/back-notebook-pwa-dev',
+      //uri: 'mongodb://localhost/back-notebook-pwa-dev',
+      uri: 'mongodb+srv://admin:123@cluster0-mapet.mongodb.net/test?retryWrites=true',
       options: {
         debug: true
       }
@@ -49,7 +50,8 @@ const config = {
     ip: process.env.IP || undefined,
     port: process.env.PORT || 8080,
     mongo: {
-      uri: process.env.MONGODB_URI || 'mongodb://localhost/back-notebook-pwa'
+      //uri: process.env.MONGODB_URI || 'mongodb://localhost/back-notebook-pwa'
+      uri: process.env.MONGODB_URI || 'mongodb+srv://admin:123@cluster0-mapet.mongodb.net/test?retryWrites=true'
     }
   }
 }

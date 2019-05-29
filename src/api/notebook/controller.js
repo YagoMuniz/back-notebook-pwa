@@ -9,21 +9,21 @@ export const showById = ({ params }, res, next) =>
         .catch(next)
 
 export const showAll = ({ querymen: { query, select, cursor } }, res, next) => 
-    Notebook.find(query, select, cursor)
-        .then((notebooks) => notebooks.map((notebook) => note.view()))
-        .then(success(res))
-        .catch(next)
+    Notebook.find({ user: res.req.user._id }, select, cursor)
+    .then((notebooks) => notebooks.map((notebook) => notebook.view()))
+    .then(success(res))
+    .catch(next)
 
 export const create = ({ bodymen: { body } }, res, next) => 
-    Notebook.create(body)
-        .then((notebook) => notebook.view(true))
-        .then(success(res, 201))
-        .catch((err) => {
+    Notebook.create({ ...body, user: res.req.user._id})
+    .then((notebook) => notebook.view(true))
+    .then(success(res, 201))
+    .catch((err) => {
         if (err.name === 'MongoError' && err.code === 11000) {
             res.status(409).json({
-            valid: false,
-            param: 'title',
-            message: 'title already registered'
+                valid: false,
+                param: 'title',
+                message: 'title already registered'
             })
         } else {
             next(err)

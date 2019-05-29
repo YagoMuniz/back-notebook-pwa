@@ -10,10 +10,10 @@ export Notebook, { schema } from './model'
 const router = new Router()
 const { title, description, pages, number_of_pages } = schema.tree
 
-router.get('/', token({required: false, roles:['user, admin']}), query(), showAll)
-router.get('/:id', token({required: true, roles:['user', 'admin']}), showById)
-router.post('/', token({required: true, roles:['user', 'admin']}), body({ title, description, pages, number_of_pages }), create)
-router.delete('/:id', token({required: true, roles:['user', 'admin']}), removeById)
+router.get('/', token({required: true}), query(), showAll)
+router.get('/:id', token({required: true}), showById)
+router.post('/', token({required: true}), body({ title, description, pages, number_of_pages }), create)
+router.delete('/:id', token({required: true}), removeById)
 router.put('/:id', token({required: true}), body({ title, description, pages, number_of_pages }), update)
 
 export default router

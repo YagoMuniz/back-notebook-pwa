@@ -18,6 +18,11 @@ const notebookSchema = new Schema({
     number_of_pages: {
         type: Number,
         required: true
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 
 }, { timestamps: true })
