@@ -34,7 +34,7 @@ export const removeById = ({ params }, res, next) =>
     Notebook.findById(params.id)
         .then(notFound(res))
         .then((notebook) => notebook ? notebook.remove() : null)
-        .then(success(res, 204))
+        .then(success(res, 200))
         .catch(next)
 
 export const update = ({ bodymen: { body }, params}, res, next) => 
