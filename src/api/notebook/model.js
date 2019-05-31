@@ -30,7 +30,7 @@ const notebookSchema = new Schema({
 notebookSchema.methods = {
     view (full) {
       let view = {}
-      let fields = ['id', 'title']
+      let fields = ['id', 'title', 'description', 'pages', 'user', 'createdAt', 'updateAt']
   
       if (full) {
         fields = [...fields, 'createdAt']
