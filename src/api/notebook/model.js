@@ -6,10 +6,11 @@ const notebookSchema = new Schema({
     name: {
         type: String,
         unique: true,
+        match: "[^A-Za-z0-9_]"
     },
     title: {
         type: String,
-        // required: true,
+        required: true,
         unique: true,
         trim: true
     },
