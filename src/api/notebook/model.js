@@ -6,7 +6,7 @@ const notebookSchema = new Schema({
     name: {
         type: String,
         unique: true,
-        match: "[^A-Za-z0-9_]"
+        match: "[^A-Za-z0-9_]+"
     },
     title: {
         type: String,
