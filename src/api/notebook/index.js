@@ -8,7 +8,7 @@ import { schema } from './model'
 export Notebook, { schema } from './model'
 
 const router = new Router()
-const { title, description, pages, number_of_pages } = schema.tree
+const { name, title, description, pages, number_of_pages } = schema.tree
 
 router.get('/', token({required: true}), query(), showAll)
 router.get('/:id', token({required: true}), showById)
