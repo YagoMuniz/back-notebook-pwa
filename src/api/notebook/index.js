@@ -12,9 +12,9 @@ const { title, description, pages, number_of_pages } = schema.tree
 
 router.get('/', token({required: true}), query(), showAll)
 router.get('/:id', token({required: true}), showById)
-router.post('/', token({required: true}), body({ title, description, pages, number_of_pages }), create)
+router.post('/', token({required: true}), body({ name, title, description, pages, number_of_pages }), create)
 router.delete('/:id', token({required: true}), removeById)
-router.put('/:id', token({required: true}), body({ title, description, pages, number_of_pages }), update)
+router.put('/:id', token({required: true}), body({ name, title, description, pages, number_of_pages }), update)
 
 export default router
 

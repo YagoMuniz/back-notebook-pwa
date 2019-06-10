@@ -42,7 +42,7 @@ export const update = ({ bodymen: { body }, params}, res, next) =>
         .then(notFound(res))
         .then((notebook) => 
             notebook ? 
-            notebook.set({title: body.title, description: body.description, 
+            notebook.set({name: body.name, title: body.title, description: body.description, 
                 pages: body.pages, number_of_pages: body.number_of_pages}).save()
             : null)
         .then(success(res))
