@@ -5,8 +5,7 @@ import mongooseKeywords from 'mongoose-keywords'
 const notebookSchema = new Schema({
     name: {
         type: String,
-        unique: true,
-        match: "[^A-Za-z0-9_]+"
+        unique: true
     },
     title: {
         type: String,
